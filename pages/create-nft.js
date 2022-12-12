@@ -28,6 +28,7 @@ const CreateItem = () => {
       const url = `${dedicatedEndPoint}/ipfs/${added.path}`;
       setFileUrl(url);
     } catch (error) {
+      console.log(error);
       console.log('Error uploading file to IPFS.');
     }
   };

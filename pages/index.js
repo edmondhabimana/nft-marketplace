@@ -25,7 +25,7 @@ const Home = () => {
   useEffect(() => {
     fetchNFTs()
       .then((items) => {
-        setNfts(items.reverse());
+        setNfts(items);
         setNftsCopy(items);
         setIsLoading(false);
       });
@@ -97,7 +97,7 @@ const Home = () => {
     };
   });
 
-  const creators = getCreators(nfts);
+  const creators = getCreators(nftsCopy);
 
   return (
     <div className="flex justify-center sm:px-4 p-12">
@@ -123,7 +123,7 @@ const Home = () => {
                       rank={i + 1}
                       creatorImage={images[`creator${i + 1}`]}
                       creatorName={shortenAddress(creator.seller)}
-                      creatorEths={creator.sumall}
+                      creatorEths={creator.sum}
                     />
                   ))}
                   {/* {[6, 7, 8, 9, 10].map((i) => (

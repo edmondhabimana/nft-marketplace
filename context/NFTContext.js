@@ -84,7 +84,7 @@ export const NFTProvider = ({ children }) => {
     // const provider = new ethers.providers.Web3Provider(connection);
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(address, abi, signer);
+    const contract = fetchContract(signer);
 
     const price = ethers.utils.parseUnits(nft.price.toString(), 'ether');
     const transaction = await contract.createMarketSale(nft.tokenId, { value: price });

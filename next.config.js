@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const dedicatedEndPoint = 'https://edmond.infura-ipfs.io';
 const nextConfig = {
